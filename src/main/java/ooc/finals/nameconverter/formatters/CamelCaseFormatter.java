@@ -1,18 +1,19 @@
-package ooc.finals.nameconverter.formats;
+package ooc.finals.nameconverter.formatters;
 
 
 import ooc.finals.nameconverter.FormatSpecification;
 import org.apache.commons.lang3.StringUtils;
 
-public class OracleFriendlyFormat implements Format  {
+public class CamelCaseFormatter implements Formatter {
 
     @Override
     public String apply(FormatSpecification spec) {
         String name = spec.getName();
         String[] words = StringUtils.splitByCharacterTypeCamelCase(name);
-        for(int i=0; i<words.length; i++){
-            words[i] =StringUtils.upperCase(words[i]);
+        words[0] = StringUtils.lowerCase(words[0]);
+        for(int i=1; i<words.length; i++){
+            StringUtils.capitalize(words[i]);
         }
-        return StringUtils.join(words,"_");
+        return StringUtils.join(words);
     }
 }

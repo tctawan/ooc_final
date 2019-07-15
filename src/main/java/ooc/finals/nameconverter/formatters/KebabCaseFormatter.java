@@ -1,10 +1,10 @@
-package ooc.finals.nameconverter.formats;
+package ooc.finals.nameconverter.formatters;
 
 
 import ooc.finals.nameconverter.FormatSpecification;
 import org.apache.commons.lang3.StringUtils;
 
-public class KebabCaseFormat implements Format  {
+public class KebabCaseFormatter implements Formatter {
 
     @Override
     public String apply(FormatSpecification spec) {

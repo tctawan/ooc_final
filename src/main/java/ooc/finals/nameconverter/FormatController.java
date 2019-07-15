@@ -6,15 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
-public class Controller {
+public class FormatController {
 
-    private ConvertService convertService;
+    private FormatService convertService;
 
     @Autowired
-    Controller(ConvertService convertService){
+    FormatController(FormatService convertService){
         this.convertService = convertService;
     }
 
