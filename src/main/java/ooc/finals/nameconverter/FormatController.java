@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FormatController {
 
-    private FormatService convertService;
+    private FormatService formatService;
 
     @Autowired
-    FormatController(FormatService convertService){
-        this.convertService = convertService;
+    FormatController(FormatService formatService){
+        this.formatService = formatService;
     }
 
     @PostMapping("/convert")
     ResponseEntity convert(@RequestBody FormatSpecification spec){
-        String result = convertService.convert(spec);
+        String result = formatService.convert(spec);
         if(result == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
